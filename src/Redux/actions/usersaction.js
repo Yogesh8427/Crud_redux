@@ -1,18 +1,14 @@
-import { UserData, getUserData } from "../../utils/asynstorage"
-import store from "../store"
-import { addUser, deleteUser,editUser } from "../Reducers/addusers"
-import keystring from "../../constants/keystring";
 import { Alert } from "react-native";
+import { addUser, deleteUser, editUser } from "../Reducers/addusers";
+import store from "../store";
 
 export const adduser = async (value) => {
     if (Array.isArray(value)) {
         await store.dispatch(addUser(value));
     } else {
         await store.dispatch(addUser(value));
-        // await UserData(value);
     }
-    // let userdata = await getUserData(keystring.ADDUSER);
-    // console.log(userdata);
+
 }
 
 export const deleteuser = (value) => {
@@ -22,7 +18,9 @@ export const deleteuser = (value) => {
      ,{cancelable:true})
 
 }
-
 export const edituser=(value)=>{
     store.dispatch(editUser(value))
+}
+export const userLogin=()=>{
+
 }

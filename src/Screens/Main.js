@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, FlatList, TouchableOpacity, Dimensions } from 'react-native'
-import { scale, verticalScale, moderateScale } from 'react-native-size-matters';
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
+import { Dimensions, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { scale, verticalScale } from 'react-native-size-matters';
+import { useSelector } from 'react-redux';
 import Card from '../Components/Card';
 import navigationstring from '../Navigations/navigationstring';
-import { getUserData } from '../utils/asynstorage';
-import { useSelector } from 'react-redux';
 import { addUser } from '../Redux/Reducers/addusers';
+import { getUserData } from '../utils/asynstorage';
 const Main = ({ navigation }) => {
   const[userdata,setuserdata]=useState();
   const adduserscreen = () => {
